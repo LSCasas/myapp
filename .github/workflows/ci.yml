@@ -1,0 +1,11 @@
+name: CI Worflow
+on:
+  repository_dispatch:
+    types: [test-event]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        run: echo "Building the project ..."
