@@ -10,7 +10,8 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+    if: ${{github.event_name == 'push' }}
     steps:
       - name: Build
         run: echo "Building the project ..."
