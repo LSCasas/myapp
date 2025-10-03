@@ -1,7 +1,7 @@
 name: CI Workflow
 on:
-  release:
-    types: [created]
+  issues:
+    types: [opened, closed]
 
 jobs:
   build:
