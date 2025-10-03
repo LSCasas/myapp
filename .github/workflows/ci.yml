@@ -1,17 +1,11 @@
 name: CI Workflow
 on:
-  workflow_dispatch: {}
-  push:
-    branches:
-      - develop
-  pull_request:
-    branches:
-      - main
+  release:
+    types: [created]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: ${{github.event_name == 'push' }}
     steps:
       - name: Build
         run: echo "Building the project ..."
