@@ -17,5 +17,5 @@ jobs:
         uses: villesau/ai-codereviewer@main
         with:
           OPENAI_API_KEY: ${{secrets.OPENAI_API_KEY}}
-          TOKEN_GITHUB: ${{secrets.TOKEN_GITHUB}}
+          GITHUB_TOKEN: ${{ github.token }}
           OPENAI_API_MODEL: gpt-4o-mini
