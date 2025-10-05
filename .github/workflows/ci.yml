@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TEST_LEVEL: "unit"
-    environment: development
+    environment: developmen
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
@@ -37,4 +37,4 @@ jobs:
           echo "The result was ${{steps.test.outputs.app-status}}"
           echo "The level test is $TEST_LEVEL"
       - name: Show secret
-        run: echo "Password is ${{secrets.DB_PASSWOR}}"
+        run: echo "Password is ${{secrets.DB_PASSWORD}}"
