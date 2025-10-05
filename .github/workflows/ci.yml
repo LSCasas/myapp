@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - develop
-
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -11,16 +10,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5
         with:
-          fetch-depth: "1"
+          fetch-depth: 1
+
       - name: Install dependencies
         uses: actions/setup-python@v4
         with:
           python-version: "3.12"
         id: step1
+
       - name: Test
         uses: ./.github/actions/tests
         with:
           python-version: "3.12"
 
       - name: Show tests result
-        run: echo "The result was ${{steps.run.tests.outputs.app-status}}"
+        run: echo "The result was ${{steps.test.outputs.app-status}}"
