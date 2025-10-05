@@ -9,17 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        run: |
-          git init  
-          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}
-          git fetch origin ${{github.ref}} --depth=1
-          git checkout FETCH_HEAD
+        uses: actions/checkout@v5
       - name: Install dependencies
-        run: |
-          echo "Installing dependencies ..."
-          echo "status=success" >> $GITHUB_OUTPUT
+        uses: actions/setup-python@v4
         id: step1
-
       - name: Test
         if: steps.step1.outputs.status == 'success'
         run: |
