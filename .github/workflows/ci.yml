@@ -37,4 +37,4 @@ jobs:
           echo "The result was ${{steps.test.outputs.app-status}}"
           echo "The level test is $TEST_LEVEL"
       - name: Show secret
-        run: echo "Password is ${{secrets.DB_PASSWORD}}"
+        run: echo "Password is ${{secrets.DB_PASSWOR}}"
