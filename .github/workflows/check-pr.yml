@@ -1,0 +1,21 @@
+name: AI Code Review
+
+on:
+  pull_request:
+    types:
+      - opened
+
+permissions: write-all
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+      - name: Run AI Code Review
+        uses: villesau/ai-codereviewer@main
+        with:
+          OPENAI_API_KEY: ${{secrets.OPENAI_API_KEY}}
+          TOKEN_GITHUB: ${{secrets.TOKEN_GITHUB}}
+          OPENAI_API_MODEL: gpt-4
