@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TEST_LEVEL: "unit"
+    environment: development
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
