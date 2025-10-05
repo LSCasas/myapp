@@ -35,5 +35,5 @@ jobs:
         run: |
           echo "The result was ${{steps.test.outputs.app-status}}"
           echo "The level test is $TEST_LEVEL"
-      - name: Show enviroment
-        run: echo "Enviroment is $APP_ENV"
+      - name: Show secret
+        run: echo "Password is ${{secrets.DB_PASSWORD}}"
