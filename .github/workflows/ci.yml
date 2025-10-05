@@ -1,14 +1,12 @@
-name: AI Code Review
+name: CI Workflow
 
 on:
-  pull_request:
-    types:
-      - opened
-
-permissions: write-all
+  push:
+    branches:
+      - develop
 
 jobs:
-  review:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
