@@ -1,0 +1,21 @@
+name: "Local Action"
+description: "A local action to demostrate usage"
+
+inputs:
+  python-version:
+    description: "The version of Python to uses"
+    required: true
+    default: "3.12"
+
+outpus:
+  app-status:
+    description: "The status of the setup step"
+    value: "success"
+
+run:
+  using: "composite"
+  steps:
+    - name: Run tests
+      run: |
+        echo "Test executed successfully"
+      shell: bash

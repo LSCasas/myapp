@@ -18,7 +18,9 @@ jobs:
           python-version: "3.12"
         id: step1
       - name: Test
-        if: steps.step1.outputs.status == 'success'
-        run: |
-          echo "El resultado del paso anterior fue ${{ steps.step1.outputs.status }}"
-          echo "Running test ..."
+        uses: ./.github/actions/tests
+        with:
+          python-version: "3.12"
+
+      - name: Show tests result
+        run: echo "The result was ${{steps.run.tests.outputs.app-status}}"
